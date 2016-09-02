@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Age {
+
+    public static void main(String[] args) throws Exception{
+        int age;
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter your age");
+        age=in.nextInt();
+
+        if (age < 0){
+            throw new NegativeAgeException("Enter value is Negative");
+        }
+        else{
+            System.out.println("Age entered is " + age);
+        }
+    }
+}
+
+public class NegativeAgeException extends RuntimeException
+{
+     
+    public NegativeAgeException (String msg)
+    {
+        super(msg);
+    }
+}
